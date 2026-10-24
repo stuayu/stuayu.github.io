@@ -52,7 +52,7 @@
     },
     {
       "id": "etc",
-      "name": "構築・その他",
+      "name": "その他",
       "note": "まとめて動かす、ほかの道具",
       "repos": [
         "docker-recisdb-epgstation-konomitv",
@@ -107,5 +107,15 @@
     "Authentication-server-pytest": "FastAPI を使って、安全なログインの仕組みを学ぶためのリポジトリ。",
     "team1": "授業のチーム開発でつくった出席管理システム。",
     "rename": "ファイル名をまとめて変えるプログラム。"
-  }
+  },
+  "featured": [
+    "BonCasRelay",
+    "docker-recisdb-epgstation-konomitv",
+    "EPGStation",
+    "youtube-live-archiver",
+    "recisdb-proxy-rs",
+    "EDCB-to-EPGStation",
+    "BonDriver_mirakc",
+    "Mirakurun"
+  ]
 }
