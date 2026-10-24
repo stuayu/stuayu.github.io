@@ -1,0 +1,13 @@
+{
+  "name": "あむ (stuayu)",
+  "short_name": "stuayu",
+  "lang": "ja",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1b3bd1",
+  "theme_color": "#1b3bd1",
+  "icons": [
+    { "src": "/assets/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/assets/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

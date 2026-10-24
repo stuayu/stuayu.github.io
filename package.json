@@ -1,0 +1,9 @@
+{
+  "name": "stuayu.github.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:offline": "node scripts/build.mjs --offline"
+  }
+}

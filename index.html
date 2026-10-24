@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>あむ (stuayu) | テレビ録画・視聴ツールをつくる人</title>
+  <meta name="description" content="あむ (stuayu) のポートフォリオ。Mirakurun、EPGStation、EDCB、KonomiTV など、自宅でテレビを録画して見るためのソフトを改造したり、チューナーやカード共有のツールを自作したりしています。">
+  <link rel="canonical" href="https://stuayu.github.io/">
+  <meta name="author" content="あむ (stuayu)">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#1B3BD1">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="stuayu.github.io">
+  <meta property="og:title" content="あむ (stuayu) | テレビ録画・視聴ツールをつくる人">
+  <meta property="og:description" content="あむ (stuayu) のポートフォリオ。Mirakurun、EPGStation、EDCB、KonomiTV など、自宅でテレビを録画して見るためのソフトを改造したり、チューナーやカード共有のツールを自作したりしています。">
+  <meta property="og:url" content="https://stuayu.github.io/">
+  <meta property="og:image" content="https://stuayu.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ブルーバックの画面に「あむ」のテロップ">
+  <meta property="profile:username" content="stuayu">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@stuayu_">
+  <meta name="twitter:creator" content="@stuayu_">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Dela+Gothic+One&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+  @media (max-width: 760px) {
+  .epg:has(#tab-rec:checked) .cell:not(.ch-rec),
+  .epg:has(#tab-rec:checked) .ch-head:not(.ch-rec) { display: none; }
+  .epg:has(#tab-rec:checked) .epg-row:not(:has(.ch-rec .prog)),
+  .epg:has(#tab-rec:checked):has(#own-only:checked) .epg-row:not(:has(.ch-rec .prog:not(.fork))) { display: none; }
+  .epg:has(#tab-tuner:checked) .cell:not(.ch-tuner),
+  .epg:has(#tab-tuner:checked) .ch-head:not(.ch-tuner) { display: none; }
+  .epg:has(#tab-tuner:checked) .epg-row:not(:has(.ch-tuner .prog)),
+  .epg:has(#tab-tuner:checked):has(#own-only:checked) .epg-row:not(:has(.ch-tuner .prog:not(.fork))) { display: none; }
+  .epg:has(#tab-watch:checked) .cell:not(.ch-watch),
+  .epg:has(#tab-watch:checked) .ch-head:not(.ch-watch) { display: none; }
+  .epg:has(#tab-watch:checked) .epg-row:not(:has(.ch-watch .prog)),
+  .epg:has(#tab-watch:checked):has(#own-only:checked) .epg-row:not(:has(.ch-watch .prog:not(.fork))) { display: none; }
+  .epg:has(#tab-etc:checked) .cell:not(.ch-etc),
+  .epg:has(#tab-etc:checked) .ch-head:not(.ch-etc) { display: none; }
+  .epg:has(#tab-etc:checked) .epg-row:not(:has(.ch-etc .prog)),
+  .epg:has(#tab-etc:checked):has(#own-only:checked) .epg-row:not(:has(.ch-etc .prog:not(.fork))) { display: none; }
+  }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","url":"https://stuayu.github.io/","name":"あむ (stuayu) のポートフォリオ","inLanguage":"ja","dateModified":"2026-10-24T15:48:48.926Z","mainEntity":{"@type":"Person","@id":"https://stuayu.github.io/#me","name":"あむ","alternateName":"stuayu","url":"https://stuayu.github.io/","image":"https://avatars.githubusercontent.com/stuayu","sameAs":["https://github.com/stuayu","https://x.com/stuayu_"],"knowsAbout":["テレビ録画","ISDB","Mirakurun","EPGStation","EDCB","KonomiTV","BonDriver","Docker","Rust","C++","TypeScript","Python"]},"hasPart":{"@type":"ItemList","name":"公開リポジトリ","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareSourceCode","name":"Novelty","description":"「小説家になろう」の作品を読むための、シンプルで速いリーダーアプリ。","codeRepository":"https://github.com/stuayu/Novelty","programmingLanguage":"Dart","dateCreated":"2026-06-29T22:45:30Z","dateModified":"2026-10-24T15:42:26Z","isBasedOn":"https://github.com/L4Ph/Novelty"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareSourceCode","name":"EPGStation","description":"番組表から録画予約や視聴ができる録画ソフト EPGStation の改造版。シリーズ録画の管理を強化するなど、さまざまな改造を入れています。","codeRepository":"https://github.com/stuayu/EPGStation","programmingLanguage":"TypeScript","dateCreated":"2021-12-10T02:15:21Z","dateModified":"2026-10-24T15:20:09Z","isBasedOn":"https://github.com/l3tnun/EPGStation"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareSourceCode","name":"Komorebi","description":"Android TV や Fire TV でテレビ番組を見るためのアプリ。","codeRepository":"https://github.com/stuayu/Komorebi","programmingLanguage":"Kotlin","dateCreated":"2026-03-15T09:06:18Z","dateModified":"2026-10-24T14:19:09Z","isBasedOn":"https://github.com/BeerEgg2001/Komorebi"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareSourceCode","name":"recisdb-proxy-rs","description":"放送の暗号を解くライブラリ libaribb25 を、Rust から使いやすくしたもの。Linux のチューナーからも BonDriver からも放送を読み込めます。","codeRepository":"https://github.com/stuayu/recisdb-proxy-rs","programmingLanguage":"Rust","dateCreated":"2026-02-01T04:07:39Z","dateModified":"2026-10-24T07:37:17Z","isBasedOn":"https://github.com/kazuki0824/recisdb-rs"}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareSourceCode","name":"KonomiTV","description":"テレビ放送や録画番組を、ブラウザーで快適に見られるソフト KonomiTV。","codeRepository":"https://github.com/stuayu/KonomiTV","programmingLanguage":"Python","dateCreated":"2023-12-18T10:17:03Z","dateModified":"2026-10-19T13:38:59Z","isBasedOn":"https://github.com/tsukumijima/KonomiTV"}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareSourceCode","name":"docker-recisdb-epgstation-konomitv","description":"録画に必要なソフト一式（recisdb-proxy、EPGStation、KonomiTV、EDCB、Amatsukaze）を、コマンド一つでまとめて立ち上げられるようにしたもの。家の中のスマートフォンや PC から予約と視聴ができます。","codeRepository":"https://github.com/stuayu/docker-recisdb-epgstation-konomitv","programmingLanguage":"Python","dateCreated":"2026-10-18T15:27:48Z","dateModified":"2026-10-19T13:13:37Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareSourceCode","name":"EDCB","description":"Windows 向けの定番録画ソフト EDCB。xtne6f さん版に、少しだけ修正を加えています。","codeRepository":"https://github.com/stuayu/EDCB","programmingLanguage":"C++","dateCreated":"2024-03-13T09:53:14Z","dateModified":"2026-10-19T03:51:52Z","isBasedOn":"https://github.com/tkntrec/EDCB"}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareSourceCode","name":"BonCasRelay","description":"B-CAS / ACAS カードを 1 台の PC に挿しておき、家の中の別の PC からも使えるようにするサーバー。設定はブラウザーからでき、Linux、macOS、Windows で動きます。","codeRepository":"https://github.com/stuayu/BonCasRelay","programmingLanguage":"Rust","dateCreated":"2026-10-17T23:30:15Z","dateModified":"2026-10-18T12:03:36Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":9,"item":{"@type":"SoftwareSourceCode","name":"EDCB-to-EPGStation","description":"EDCB で録画が終わったら、その番組を EPGStation の録画一覧にも登録するツール。","codeRepository":"https://github.com/stuayu/EDCB-to-EPGStation","programmingLanguage":"Rust","dateCreated":"2023-06-11T13:28:09Z","dateModified":"2026-10-18T03:05:27Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":10,"item":{"@type":"SoftwareSourceCode","name":"youtube-live-archiver","description":"登録した YouTube チャンネルを見張って、ライブ配信とアーカイブを自動で保存するアプリ。自宅のサーバーで動かします。","codeRepository":"https://github.com/stuayu/youtube-live-archiver","programmingLanguage":"Python","dateCreated":"2026-10-03T15:04:17Z","dateModified":"2026-10-18T03:04:01Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":11,"item":{"@type":"SoftwareSourceCode","name":"Mirakurun","description":"家の中のチューナーをまとめて管理して、録画ソフトや視聴ソフトに放送を配るサーバー。","codeRepository":"https://github.com/stuayu/Mirakurun","programmingLanguage":"JavaScript","dateCreated":"2021-12-10T02:11:07Z","dateModified":"2026-10-17T14:40:16Z","isBasedOn":"https://github.com/Chinachu/Mirakurun"}},{"@type":"ListItem","position":12,"item":{"@type":"SoftwareSourceCode","name":"BonCasClient","description":"BonCasRelay などのカード共有サーバーにつなぐための部品（DLL）。元のリポジトリの写しです。","codeRepository":"https://github.com/stuayu/BonCasClient","dateCreated":"2026-10-12T21:55:09Z","dateModified":"2026-10-12T22:00:44Z","isBasedOn":"https://github.com/MT6768/BonCasClient"}},{"@type":"ListItem","position":13,"item":{"@type":"SoftwareSourceCode","name":"px4_drv","description":"PLEX PX4/PX5/PX-MLT などのテレビチューナーを、Linux や Windows で動かすための非公式ドライバー。","codeRepository":"https://github.com/stuayu/px4_drv","programmingLanguage":"C++","dateCreated":"2026-05-01T05:52:07Z","dateModified":"2026-10-12T21:47:33Z","isBasedOn":"https://github.com/tsukumijima/px4_drv"}},{"@type":"ListItem","position":14,"item":{"@type":"SoftwareSourceCode","name":"dantto4k","description":"新 4K8K 衛星放送の形式（MMT/TLV）を、一般的な録画ファイルの形式（MPEG-2 TS）に変換するツール。","codeRepository":"https://github.com/stuayu/dantto4k","programmingLanguage":"C++","dateCreated":"2026-08-10T07:08:41Z","dateModified":"2026-10-12T10:53:17Z","isBasedOn":"https://github.com/nekohkr/dantto4k"}},{"@type":"ListItem","position":15,"item":{"@type":"SoftwareSourceCode","name":"BonDriver_BDA","description":"BonDriver は、チューナーを TVTest などのソフトから使うための部品です。これは多くの市販チューナーで使える汎用版。","codeRepository":"https://github.com/stuayu/BonDriver_BDA","programmingLanguage":"C++","dateCreated":"2024-12-07T10:59:12Z","dateModified":"2026-08-10T03:36:47Z","isBasedOn":"https://github.com/radi-sh/BonDriver_BDA"}},{"@type":"ListItem","position":16,"item":{"@type":"SoftwareSourceCode","name":"BonDriverProxyEx","description":"BonDriverProxy に、空いているチューナーを自動で選ぶ機能を加えたもの。","codeRepository":"https://github.com/stuayu/BonDriverProxyEx","programmingLanguage":"C++","dateCreated":"2023-04-02T02:51:14Z","dateModified":"2025-10-27T13:11:58Z","isBasedOn":"https://github.com/HaijinW/BonDriverProxyEx"}},{"@type":"ListItem","position":17,"item":{"@type":"SoftwareSourceCode","name":"EDCB_Material_WebUI","description":"EDCB をブラウザーから操作する画面を、見やすいデザインにしたもの。予約、番組表、外出先からの視聴に対応しています。","codeRepository":"https://github.com/stuayu/EDCB_Material_WebUI","programmingLanguage":"JavaScript","dateCreated":"2024-08-04T12:31:42Z","dateModified":"2025-05-22T21:50:56Z","isBasedOn":"https://github.com/EMWUI/EDCB_Material_WebUI"}},{"@type":"ListItem","position":18,"item":{"@type":"SoftwareSourceCode","name":"epcltvapp","description":"Android TV や Fire TV から、EPGStation の番組を見るためのアプリ。","codeRepository":"https://github.com/stuayu/epcltvapp","programmingLanguage":"Kotlin","dateCreated":"2024-08-24T13:53:15Z","dateModified":"2024-09-01T15:32:46Z","isBasedOn":"https://github.com/daig0rian/epcltvapp"}},{"@type":"ListItem","position":19,"item":{"@type":"SoftwareSourceCode","name":"TVTestRPC","description":"TVTest で見ている番組名を、Discord のプロフィールに表示します。","codeRepository":"https://github.com/stuayu/TVTestRPC","programmingLanguage":"C++","dateCreated":"2023-12-16T09:56:22Z","dateModified":"2024-07-16T12:53:16Z","isBasedOn":"https://github.com/SlashNephy/TvTestRPC"}},{"@type":"ListItem","position":20,"item":{"@type":"SoftwareSourceCode","name":"BonDriver_mirakc","description":"TVTest から mirakc や Mirakurun のチューナーを使うための部品。暗号化された通信（HTTPS）にも対応しています。","codeRepository":"https://github.com/stuayu/BonDriver_mirakc","programmingLanguage":"C++","dateCreated":"2023-03-09T10:51:43Z","dateModified":"2024-07-12T06:23:27Z","isBasedOn":"https://github.com/tkmsst/BonDriver_mirakc"}},{"@type":"ListItem","position":21,"item":{"@type":"SoftwareSourceCode","name":"BonDriverProxyEx_webhook_notify","description":"BonDriverProxyEx を今どの PC が使っているかを調べて、Discord に通知します。","codeRepository":"https://github.com/stuayu/BonDriverProxyEx_webhook_notify","programmingLanguage":"C++","dateCreated":"2024-02-17T08:35:40Z","dateModified":"2024-07-04T10:31:47Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":22,"item":{"@type":"SoftwareSourceCode","name":"tsdump","description":"全チャンネルを常に録画しておく、いわゆる「全録」を PC で行うための、シンプルで安定した録画ツール。","codeRepository":"https://github.com/stuayu/tsdump","programmingLanguage":"C","dateCreated":"2024-05-06T10:22:46Z","dateModified":"2024-05-06T10:57:25Z","isBasedOn":"https://github.com/hayamdk/tsdump"}},{"@type":"ListItem","position":23,"item":{"@type":"SoftwareSourceCode","name":"BonDriverProxy","description":"チューナーを、別の PC からネットワーク越しに使えるようにするツール。","codeRepository":"https://github.com/stuayu/BonDriverProxy","programmingLanguage":"C++","dateCreated":"2022-11-03T01:16:55Z","dateModified":"2023-10-21T11:17:42Z","isBasedOn":"https://github.com/u-n-k-n-o-w-n/BonDriverProxy"}},{"@type":"ListItem","position":24,"item":{"@type":"SoftwareSourceCode","name":"EPGS-to-Discord","description":"EPGStation の録画情報を Discord のチャンネルに投稿します。","codeRepository":"https://github.com/stuayu/EPGS-to-Discord","programmingLanguage":"TypeScript","dateCreated":"2022-11-09T10:50:02Z","dateModified":"2023-05-13T03:55:29Z","isBasedOn":"https://github.com/yt4687/EPGS-to-Discord"}},{"@type":"ListItem","position":25,"item":{"@type":"SoftwareSourceCode","name":"Authentication-server-pytest","description":"FastAPI を使って、安全なログインの仕組みを学ぶためのリポジトリ。","codeRepository":"https://github.com/stuayu/Authentication-server-pytest","programmingLanguage":"CSS","dateCreated":"2021-10-29T01:03:28Z","dateModified":"2023-02-08T03:38:12Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":26,"item":{"@type":"SoftwareSourceCode","name":"FFmpeg-Builds","description":"動画の変換に使う定番ツール FFmpeg を、Windows と Linux 向けにビルドしたもの。","codeRepository":"https://github.com/stuayu/FFmpeg-Builds","programmingLanguage":"Shell","dateCreated":"2021-10-10T07:19:06Z","dateModified":"2022-12-12T06:02:31Z","isBasedOn":"https://github.com/BtbN/FFmpeg-Builds"}},{"@type":"ListItem","position":27,"item":{"@type":"SoftwareSourceCode","name":"Abot_discord","description":"URL の短縮や地震の通知などができる Discord のボット。","codeRepository":"https://github.com/stuayu/Abot_discord","programmingLanguage":"Python","dateCreated":"2021-09-14T02:25:38Z","dateModified":"2022-12-08T13:00:21Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":28,"item":{"@type":"SoftwareSourceCode","name":"join_logo_scp_trial","description":"録画した番組から CM を自動でカットする仕組み（join_logo_scp）を試すための環境。","codeRepository":"https://github.com/stuayu/join_logo_scp_trial","programmingLanguage":"JavaScript","dateCreated":"2021-11-13T00:33:02Z","dateModified":"2022-01-06T04:26:05Z","isBasedOn":"https://github.com/tobitti0/join_logo_scp_trial"}},{"@type":"ListItem","position":29,"item":{"@type":"SoftwareSourceCode","name":"team1","description":"授業のチーム開発でつくった出席管理システム。","codeRepository":"https://github.com/stuayu/team1","programmingLanguage":"Python","dateCreated":"2021-05-17T11:58:10Z","dateModified":"2021-07-27T05:27:10Z","author":{"@id":"https://stuayu.github.io/#me"}}},{"@type":"ListItem","position":30,"item":{"@type":"SoftwareSourceCode","name":"rename","description":"ファイル名をまとめて変えるプログラム。","codeRepository":"https://github.com/stuayu/rename","programmingLanguage":"Python","dateCreated":"2020-08-25T09:06:38Z","dateModified":"2021-06-01T15:08:39Z","author":{"@id":"https://stuayu.github.io/#me"}}}]}}</script>
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#epg">番組表へ移動</a>
+
+  <header class="tv" id="top">
+    <div class="osd">
+      <p class="osd-station"><span class="osd-num">011</span>stuayu</p>
+      <p class="osd-clock"><time id="clock" datetime="2026-10-24T15:48:48.926Z">--:--</time></p>
+    </div>
+
+    <div class="tv-main">
+      <h1 class="telop">あむ</h1>
+      <p class="tv-lede">テレビを録って、配って、見るための道具をつくっています。</p>
+      <p class="tv-sub">Mirakurun、EPGStation、EDCB、KonomiTV など、自宅でテレビを録画して見るためのオープンソースソフトを改造したり、足りない部品を Rust や C++、Python で自作したりしています。</p>
+    </div>
+
+    <a class="lower-third" href="#p-Novelty" data-open="p-Novelty">
+      <span class="lt-tag">放送中</span>
+      <span class="lt-title">Novelty</span>
+      <span class="lt-time">10月25日に更新</span>
+    </a>
+
+    <nav class="dkeys" aria-label="ページ内リンク">
+      <a class="dkey k-blue" href="#epg"><i aria-hidden="true"></i>番組表</a>
+      <a class="dkey k-red" href="#about"><i aria-hidden="true"></i>プロフィール</a>
+      <a class="dkey k-green" href="#langs"><i aria-hidden="true"></i>言語</a>
+      <a class="dkey k-yellow" href="#links"><i aria-hidden="true"></i>リンク</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="epg" id="epg" aria-labelledby="epg-title">
+      <input type="radio" name="ch" id="tab-rec" class="vh" checked>
+      <input type="radio" name="ch" id="tab-tuner" class="vh">
+      <input type="radio" name="ch" id="tab-watch" class="vh">
+      <input type="radio" name="ch" id="tab-etc" class="vh">
+      <input type="checkbox" id="own-only" class="vh">
+
+      <div class="epg-bar">
+        <div>
+          <h2 id="epg-title" class="sec-title">番組表</h2>
+          <p class="epg-date"><time id="today" datetime="2026-10-24">2026年10月25日（日）</time>現在。公開しているリポジトリ 30 本を、最後に更新した月ごとに並べています。番組を押すと詳しい説明が出ます。「フォーク」は、ほかの人のプロジェクトを複製して手を加えたものです。</p>
+        </div>
+        <div class="epg-controls">
+          <div class="tabs" role="group" aria-label="チャンネル">
+            <label for="tab-rec" class="tab ch-rec">録画</label>
+            <label for="tab-tuner" class="tab ch-tuner">チューナー</label>
+            <label for="tab-watch" class="tab ch-watch">視聴</label>
+            <label for="tab-etc" class="tab ch-etc">構築・その他</label>
+          </div>
+          <label for="own-only" class="toggle"><span class="toggle-box" aria-hidden="true"></span>自分で作ったものだけ表示（9 本）</label>
+        </div>
+      </div>
+
+      <div class="epg-grid">
+        <div class="epg-head" role="presentation">
+          <div class="epg-corner"><span class="now-label">いま</span></div>
+          <div class="ch-head ch-rec"><strong>録画</strong><span>予約して録る、録ったあとを整える</span></div>
+          <div class="ch-head ch-tuner"><strong>チューナー</strong><span>放送を受けて、ほかのソフトに渡す</span></div>
+          <div class="ch-head ch-watch"><strong>視聴</strong><span>テレビやスマホで見る</span></div>
+          <div class="ch-head ch-etc"><strong>構築・その他</strong><span>まとめて動かす、ほかの道具</span></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">10<small>月</small></span><span class="hour-y">2026</span></div>
+          <div class="cell ch-rec" data-ch="rec">
+            <button type="button" class="prog fork onair" popovertarget="p-EPGStation" data-pushed="2026-10-24T15:20:09Z">
+              <span class="prog-day" aria-hidden="true">25</span>
+              <span class="prog-body">
+                <span class="prog-name">EPGStation</span>
+                <span class="prog-desc">番組表から録画予約や視聴ができる録画ソフト EPGStation の改造版。シリーズ録画の管理を強化するなど、さまざまな改造を入れています。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span class="prog-fork">フォーク</span><span>TypeScript</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog fork onair" popovertarget="p-EDCB" data-pushed="2026-10-19T03:51:52Z">
+              <span class="prog-day" aria-hidden="true">19</span>
+              <span class="prog-body">
+                <span class="prog-name">EDCB</span>
+                <span class="prog-desc">Windows 向けの定番録画ソフト EDCB。xtne6f さん版に、少しだけ修正を加えています。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog onair" popovertarget="p-EDCB-to-EPGStation" data-pushed="2026-10-18T03:05:27Z">
+              <span class="prog-day" aria-hidden="true">18</span>
+              <span class="prog-body">
+                <span class="prog-name">EDCB-<wbr>to-<wbr>EPGStation</span>
+                <span class="prog-desc">EDCB で録画が終わったら、その番組を EPGStation の録画一覧にも登録するツール。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span>Rust</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog onair" popovertarget="p-youtube-live-archiver" data-pushed="2026-10-18T03:04:01Z">
+              <span class="prog-day" aria-hidden="true">18</span>
+              <span class="prog-body">
+                <span class="prog-name">youtube-<wbr>live-<wbr>archiver</span>
+                <span class="prog-desc">登録した YouTube チャンネルを見張って、ライブ配信とアーカイブを自動で保存するアプリ。自宅のサーバーで動かします。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span>Python</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-tuner" data-ch="tuner">
+            <button type="button" class="prog fork onair" popovertarget="p-recisdb-proxy-rs" data-pushed="2026-10-24T07:37:17Z">
+              <span class="prog-day" aria-hidden="true">24</span>
+              <span class="prog-body">
+                <span class="prog-name">recisdb-<wbr>proxy-<wbr>rs</span>
+                <span class="prog-desc">放送の暗号を解くライブラリ libaribb25 を、Rust から使いやすくしたもの。Linux のチューナーからも BonDriver からも放送を読み込めます。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span class="prog-fork">フォーク</span><span>Rust</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog onair" popovertarget="p-BonCasRelay" data-pushed="2026-10-18T12:03:36Z">
+              <span class="prog-day" aria-hidden="true">18</span>
+              <span class="prog-body">
+                <span class="prog-name">BonCasRelay</span>
+                <span class="prog-desc">B-CAS / ACAS カードを 1 台の PC に挿しておき、家の中の別の PC からも使えるようにするサーバー。設定はブラウザーからでき、Linux、macOS、Windows で動きます。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span>Rust</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog fork" popovertarget="p-Mirakurun" data-pushed="2026-10-17T14:40:16Z">
+              <span class="prog-day" aria-hidden="true">17</span>
+              <span class="prog-body">
+                <span class="prog-name">Mirakurun</span>
+                <span class="prog-desc">家の中のチューナーをまとめて管理して、録画ソフトや視聴ソフトに放送を配るサーバー。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>JavaScript</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog fork" popovertarget="p-BonCasClient" data-pushed="2026-10-12T22:00:44Z">
+              <span class="prog-day" aria-hidden="true">13</span>
+              <span class="prog-body">
+                <span class="prog-name">BonCasClient</span>
+                <span class="prog-desc">BonCasRelay などのカード共有サーバーにつなぐための部品（DLL）。元のリポジトリの写しです。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog fork" popovertarget="p-px4_drv" data-pushed="2026-10-12T21:47:33Z">
+              <span class="prog-day" aria-hidden="true">13</span>
+              <span class="prog-body">
+                <span class="prog-name">px4_<wbr>drv</span>
+                <span class="prog-desc">PLEX PX4/PX5/PX-MLT などのテレビチューナーを、Linux や Windows で動かすための非公式ドライバー。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog fork" popovertarget="p-dantto4k" data-pushed="2026-10-12T10:53:17Z">
+              <span class="prog-day" aria-hidden="true">12</span>
+              <span class="prog-body">
+                <span class="prog-name">dantto4k</span>
+                <span class="prog-desc">新 4K8K 衛星放送の形式（MMT/TLV）を、一般的な録画ファイルの形式（MPEG-2 TS）に変換するツール。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-watch" data-ch="watch">
+            <button type="button" class="prog fork onair" popovertarget="p-Komorebi" data-pushed="2026-10-24T14:19:09Z">
+              <span class="prog-day" aria-hidden="true">24</span>
+              <span class="prog-body">
+                <span class="prog-name">Komorebi</span>
+                <span class="prog-desc">Android TV や Fire TV でテレビ番組を見るためのアプリ。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span class="prog-fork">フォーク</span><span>Kotlin</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog fork onair" popovertarget="p-KonomiTV" data-pushed="2026-10-19T13:38:59Z">
+              <span class="prog-day" aria-hidden="true">19</span>
+              <span class="prog-body">
+                <span class="prog-name">KonomiTV</span>
+                <span class="prog-desc">テレビ放送や録画番組を、ブラウザーで快適に見られるソフト KonomiTV。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span class="prog-fork">フォーク</span><span>Python</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-etc" data-ch="etc">
+            <button type="button" class="prog fork onair" popovertarget="p-Novelty" data-pushed="2026-10-24T15:42:26Z">
+              <span class="prog-day" aria-hidden="true">25</span>
+              <span class="prog-body">
+                <span class="prog-name">Novelty</span>
+                <span class="prog-desc">「小説家になろう」の作品を読むための、シンプルで速いリーダーアプリ。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span class="prog-fork">フォーク</span><span>Dart</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog onair" popovertarget="p-docker-recisdb-epgstation-konomitv" data-pushed="2026-10-19T13:13:37Z">
+              <span class="prog-day" aria-hidden="true">19</span>
+              <span class="prog-body">
+                <span class="prog-name">docker-<wbr>recisdb-<wbr>epgstation-<wbr>konomitv</span>
+                <span class="prog-desc">録画に必要なソフト一式（recisdb-proxy、EPGStation、KonomiTV、EDCB、Amatsukaze）を、コマンド一つでまとめて立ち上げられるようにしたもの。家の中のスマートフォンや PC から予約と視聴ができます。</span>
+                <span class="prog-meta"><span class="prog-live">放送中</span><span>Python</span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">8<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner">
+            <button type="button" class="prog fork" popovertarget="p-BonDriver_BDA" data-pushed="2026-08-10T03:36:47Z">
+              <span class="prog-day" aria-hidden="true">10</span>
+              <span class="prog-body">
+                <span class="prog-name">BonDriver_<wbr>BDA</span>
+                <span class="prog-desc">BonDriver は、チューナーを TVTest などのソフトから使うための部品です。これは多くの市販チューナーで使える汎用版。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">10<small>月</small></span><span class="hour-y">2025</span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner">
+            <button type="button" class="prog fork" popovertarget="p-BonDriverProxyEx" data-pushed="2025-10-27T13:11:58Z">
+              <span class="prog-day" aria-hidden="true">27</span>
+              <span class="prog-body">
+                <span class="prog-name">BonDriverProxyEx</span>
+                <span class="prog-desc">BonDriverProxy に、空いているチューナーを自動で選ぶ機能を加えたもの。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">5<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec">
+            <button type="button" class="prog fork" popovertarget="p-EDCB_Material_WebUI" data-pushed="2025-05-22T21:50:56Z">
+              <span class="prog-day" aria-hidden="true">23</span>
+              <span class="prog-body">
+                <span class="prog-name">EDCB_<wbr>Material_<wbr>WebUI</span>
+                <span class="prog-desc">EDCB をブラウザーから操作する画面を、見やすいデザインにしたもの。予約、番組表、外出先からの視聴に対応しています。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>JavaScript</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">9<small>月</small></span><span class="hour-y">2024</span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch">
+            <button type="button" class="prog fork" popovertarget="p-epcltvapp" data-pushed="2024-09-01T15:32:46Z">
+              <span class="prog-day" aria-hidden="true">2</span>
+              <span class="prog-body">
+                <span class="prog-name">epcltvapp</span>
+                <span class="prog-desc">Android TV や Fire TV から、EPGStation の番組を見るためのアプリ。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>Kotlin</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">7<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner">
+            <button type="button" class="prog fork" popovertarget="p-BonDriver_mirakc" data-pushed="2024-07-12T06:23:27Z">
+              <span class="prog-day" aria-hidden="true">12</span>
+              <span class="prog-body">
+                <span class="prog-name">BonDriver_<wbr>mirakc</span>
+                <span class="prog-desc">TVTest から mirakc や Mirakurun のチューナーを使うための部品。暗号化された通信（HTTPS）にも対応しています。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+            <button type="button" class="prog" popovertarget="p-BonDriverProxyEx_webhook_notify" data-pushed="2024-07-04T10:31:47Z">
+              <span class="prog-day" aria-hidden="true">4</span>
+              <span class="prog-body">
+                <span class="prog-name">BonDriverProxyEx_<wbr>webhook_<wbr>notify</span>
+                <span class="prog-desc">BonDriverProxyEx を今どの PC が使っているかを調べて、Discord に通知します。</span>
+                <span class="prog-meta"><span>C++</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-watch" data-ch="watch">
+            <button type="button" class="prog fork" popovertarget="p-TVTestRPC" data-pushed="2024-07-16T12:53:16Z">
+              <span class="prog-day" aria-hidden="true">16</span>
+              <span class="prog-body">
+                <span class="prog-name">TVTestRPC</span>
+                <span class="prog-desc">TVTest で見ている番組名を、Discord のプロフィールに表示します。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">5<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec">
+            <button type="button" class="prog fork" popovertarget="p-tsdump" data-pushed="2024-05-06T10:57:25Z">
+              <span class="prog-day" aria-hidden="true">6</span>
+              <span class="prog-body">
+                <span class="prog-name">tsdump</span>
+                <span class="prog-desc">全チャンネルを常に録画しておく、いわゆる「全録」を PC で行うための、シンプルで安定した録画ツール。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+      </div>
+
+      <details class="older">
+        <summary>2023年までの番組（8 本）</summary>
+        <div class="epg-grid">
+        
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">10<small>月</small></span><span class="hour-y">2023</span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner">
+            <button type="button" class="prog fork" popovertarget="p-BonDriverProxy" data-pushed="2023-10-21T11:17:42Z">
+              <span class="prog-day" aria-hidden="true">21</span>
+              <span class="prog-body">
+                <span class="prog-name">BonDriverProxy</span>
+                <span class="prog-desc">チューナーを、別の PC からネットワーク越しに使えるようにするツール。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>C++</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">5<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec">
+            <button type="button" class="prog fork" popovertarget="p-EPGS-to-Discord" data-pushed="2023-05-13T03:55:29Z">
+              <span class="prog-day" aria-hidden="true">13</span>
+              <span class="prog-body">
+                <span class="prog-name">EPGS-<wbr>to-<wbr>Discord</span>
+                <span class="prog-desc">EPGStation の録画情報を Discord のチャンネルに投稿します。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>TypeScript</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">2<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc">
+            <button type="button" class="prog" popovertarget="p-Authentication-server-pytest" data-pushed="2023-02-08T03:38:12Z">
+              <span class="prog-day" aria-hidden="true">8</span>
+              <span class="prog-body">
+                <span class="prog-name">Authentication-<wbr>server-<wbr>pytest</span>
+                <span class="prog-desc">FastAPI を使って、安全なログインの仕組みを学ぶためのリポジトリ。</span>
+                <span class="prog-meta"><span>CSS</span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">12<small>月</small></span><span class="hour-y">2022</span></div>
+          <div class="cell ch-rec" data-ch="rec">
+            <button type="button" class="prog fork" popovertarget="p-FFmpeg-Builds" data-pushed="2022-12-12T06:02:31Z">
+              <span class="prog-day" aria-hidden="true">12</span>
+              <span class="prog-body">
+                <span class="prog-name">FFmpeg-<wbr>Builds</span>
+                <span class="prog-desc">動画の変換に使う定番ツール FFmpeg を、Windows と Linux 向けにビルドしたもの。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>Shell</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc">
+            <button type="button" class="prog" popovertarget="p-Abot_discord" data-pushed="2022-12-08T13:00:21Z">
+              <span class="prog-day" aria-hidden="true">8</span>
+              <span class="prog-body">
+                <span class="prog-name">Abot_<wbr>discord</span>
+                <span class="prog-desc">URL の短縮や地震の通知などができる Discord のボット。</span>
+                <span class="prog-meta"><span>Python</span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">1<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec">
+            <button type="button" class="prog fork" popovertarget="p-join_logo_scp_trial" data-pushed="2022-01-06T04:26:05Z">
+              <span class="prog-day" aria-hidden="true">6</span>
+              <span class="prog-body">
+                <span class="prog-name">join_<wbr>logo_<wbr>scp_<wbr>trial</span>
+                <span class="prog-desc">録画した番組から CM を自動でカットする仕組み（join_logo_scp）を試すための環境。</span>
+                <span class="prog-meta"><span class="prog-fork">フォーク</span><span>JavaScript</span></span>
+              </span>
+            </button>
+          </div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc"></div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">7<small>月</small></span><span class="hour-y">2021</span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc">
+            <button type="button" class="prog" popovertarget="p-team1" data-pushed="2021-07-27T05:27:10Z">
+              <span class="prog-day" aria-hidden="true">27</span>
+              <span class="prog-body">
+                <span class="prog-name">team1</span>
+                <span class="prog-desc">授業のチーム開発でつくった出席管理システム。</span>
+                <span class="prog-meta"><span>Python</span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="epg-row">
+          <div class="hour"><span class="hour-m">6<small>月</small></span></div>
+          <div class="cell ch-rec" data-ch="rec"></div>
+          <div class="cell ch-tuner" data-ch="tuner"></div>
+          <div class="cell ch-watch" data-ch="watch"></div>
+          <div class="cell ch-etc" data-ch="etc">
+            <button type="button" class="prog" popovertarget="p-rename" data-pushed="2021-06-01T15:08:39Z">
+              <span class="prog-day" aria-hidden="true">2</span>
+              <span class="prog-body">
+                <span class="prog-name">rename</span>
+                <span class="prog-desc">ファイル名をまとめて変えるプログラム。</span>
+                <span class="prog-meta"><span>Python</span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      </details>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="sec-title">プロフィール</h2>
+      <div class="about-body">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/60843145?v=4&amp;s=240" width="120" height="120" alt="あむのアイコン" loading="lazy" decoding="async">
+        <div>
+          <p class="about-name">あむ <span>@stuayu</span></p>
+          <p>自宅でテレビを録画して見る環境を組むのが好きです。使っているオープンソースソフトに手を入れるうちに、改造版と自作のツールが少しずつ増えていきました。</p>
+          <p>チューナーの制御、B-CAS カードの共有、録画の管理、テレビ以外の端末で見る仕組みまで、放送を受けてから見るまでの流れを一通り触っています。最近は、それらをコマンド一つでまとめて立ち上げられるようにしています。</p>
+          <ul class="stack" aria-label="よく触るソフトウェア">
+            <li>Mirakurun</li>
+            <li>EPGStation</li>
+            <li>EDCB</li>
+            <li>KonomiTV</li>
+            <li>BonDriver</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="langs" id="langs" aria-labelledby="langs-title">
+      <h2 id="langs-title" class="sec-title">使っている言語</h2>
+      <p class="langs-note">番組表に載せたリポジトリで、いちばん多く使われているプログラミング言語を数えました。フォークは元のプロジェクトの言語で数えています。</p>
+      <div class="lang-bar" role="img" aria-label="C++ 9本、Python 6本、Rust 3本、JavaScript 3本、TypeScript 2本、Kotlin 2本、Dart 1本、C 1本、CSS 1本、Shell 1本"><span style="--w:31.03%;--c:#F34B7D" title="C++ 9"></span><span style="--w:20.69%;--c:#3572A5" title="Python 6"></span><span style="--w:10.34%;--c:#DEA584" title="Rust 3"></span><span style="--w:10.34%;--c:#F1E05A" title="JavaScript 3"></span><span style="--w:6.90%;--c:#3178C6" title="TypeScript 2"></span><span style="--w:6.90%;--c:#A97BFF" title="Kotlin 2"></span><span style="--w:3.45%;--c:#00B4AB" title="Dart 1"></span><span style="--w:3.45%;--c:#555555" title="C 1"></span><span style="--w:3.45%;--c:#663399" title="CSS 1"></span><span style="--w:3.45%;--c:#89E051" title="Shell 1"></span></div>
+      <ul class="lang-list">
+            <li><span class="sw" style="--c:#F34B7D"></span>C++<span class="n">9</span></li>
+            <li><span class="sw" style="--c:#3572A5"></span>Python<span class="n">6</span></li>
+            <li><span class="sw" style="--c:#DEA584"></span>Rust<span class="n">3</span></li>
+            <li><span class="sw" style="--c:#F1E05A"></span>JavaScript<span class="n">3</span></li>
+            <li><span class="sw" style="--c:#3178C6"></span>TypeScript<span class="n">2</span></li>
+            <li><span class="sw" style="--c:#A97BFF"></span>Kotlin<span class="n">2</span></li>
+            <li><span class="sw" style="--c:#00B4AB"></span>Dart<span class="n">1</span></li>
+            <li><span class="sw" style="--c:#555555"></span>C<span class="n">1</span></li>
+            <li><span class="sw" style="--c:#663399"></span>CSS<span class="n">1</span></li>
+            <li><span class="sw" style="--c:#89E051"></span>Shell<span class="n">1</span></li>
+      </ul>
+    </section>
+
+    <section class="links" id="links" aria-labelledby="links-title">
+      <h2 id="links-title" class="sec-title">リンク</h2>
+      <ul class="link-list">
+        <li><a href="https://github.com/stuayu" rel="me noopener"><span class="link-k k-blue" aria-hidden="true"></span><strong>GitHub</strong><span>github.com/stuayu</span></a></li>
+        <li><a href="https://x.com/stuayu_" rel="me noopener"><span class="link-k k-red" aria-hidden="true"></span><strong>X</strong><span>@stuayu_</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 あむ (stuayu)</p>
+    <p>番組表は GitHub の公開リポジトリから毎週自動で更新しています。最終更新 <time datetime="2026-10-24T15:48:48.926Z">2026年10月25日</time></p>
+  </footer>
+
+  <div class="pops">
+    <section class="pop ch-etc" id="p-Novelty" popover aria-label="Novelty の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">構築・その他</span>
+        <button type="button" class="pop-close" popovertarget="p-Novelty" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">Novelty</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/L4Ph/Novelty" rel="noopener">L4Ph/Novelty</a></p>
+      <p class="pop-desc">「小説家になろう」の作品を読むための、シンプルで速いリーダーアプリ。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Dart</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-06-29T22:45:30Z">2026年6月30日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-24T15:42:26Z">2026年10月25日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/Novelty" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-EPGStation" popover aria-label="EPGStation の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-EPGStation" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">EPGStation</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/l3tnun/EPGStation" rel="noopener">l3tnun/EPGStation</a></p>
+      <p class="pop-desc">番組表から録画予約や視聴ができる録画ソフト EPGStation の改造版。シリーズ録画の管理を強化するなど、さまざまな改造を入れています。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>TypeScript</dd></div>
+        <div><dt>GitHub のスター</dt><dd>14</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2021-12-10T02:15:21Z">2021年12月10日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-24T15:20:09Z">2026年10月25日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/EPGStation" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-watch" id="p-Komorebi" popover aria-label="Komorebi の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">視聴</span>
+        <button type="button" class="pop-close" popovertarget="p-Komorebi" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">Komorebi</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/BeerEgg2001/Komorebi" rel="noopener">BeerEgg2001/Komorebi</a></p>
+      <p class="pop-desc">Android TV や Fire TV でテレビ番組を見るためのアプリ。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Kotlin</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-03-15T09:06:18Z">2026年3月15日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-24T14:19:09Z">2026年10月24日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/Komorebi" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-recisdb-proxy-rs" popover aria-label="recisdb-proxy-rs の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-recisdb-proxy-rs" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">recisdb-proxy-rs</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/kazuki0824/recisdb-rs" rel="noopener">kazuki0824/recisdb-rs</a></p>
+      <p class="pop-desc">放送の暗号を解くライブラリ libaribb25 を、Rust から使いやすくしたもの。Linux のチューナーからも BonDriver からも放送を読み込めます。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Rust</dd></div>
+        <div><dt>GitHub のスター</dt><dd>6</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-02-01T04:07:39Z">2026年2月1日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-24T07:37:17Z">2026年10月24日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/recisdb-proxy-rs" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-watch" id="p-KonomiTV" popover aria-label="KonomiTV の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">視聴</span>
+        <button type="button" class="pop-close" popovertarget="p-KonomiTV" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">KonomiTV</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/tsukumijima/KonomiTV" rel="noopener">tsukumijima/KonomiTV</a></p>
+      <p class="pop-desc">テレビ放送や録画番組を、ブラウザーで快適に見られるソフト KonomiTV。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Python</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2023-12-18T10:17:03Z">2023年12月18日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-19T13:38:59Z">2026年10月19日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/KonomiTV" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-etc" id="p-docker-recisdb-epgstation-konomitv" popover aria-label="docker-recisdb-epgstation-konomitv の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">構築・その他</span>
+        <button type="button" class="pop-close" popovertarget="p-docker-recisdb-epgstation-konomitv" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">docker-recisdb-epgstation-konomitv</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">録画に必要なソフト一式（recisdb-proxy、EPGStation、KonomiTV、EDCB、Amatsukaze）を、コマンド一つでまとめて立ち上げられるようにしたもの。家の中のスマートフォンや PC から予約と視聴ができます。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Python</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-10-18T15:27:48Z">2026年10月19日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-19T13:13:37Z">2026年10月19日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/docker-recisdb-epgstation-konomitv" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-EDCB" popover aria-label="EDCB の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-EDCB" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">EDCB</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/tkntrec/EDCB" rel="noopener">tkntrec/EDCB</a></p>
+      <p class="pop-desc">Windows 向けの定番録画ソフト EDCB。xtne6f さん版に、少しだけ修正を加えています。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2024-03-13T09:53:14Z">2024年3月13日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-19T03:51:52Z">2026年10月19日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/EDCB" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-BonCasRelay" popover aria-label="BonCasRelay の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-BonCasRelay" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">BonCasRelay</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">B-CAS / ACAS カードを 1 台の PC に挿しておき、家の中の別の PC からも使えるようにするサーバー。設定はブラウザーからでき、Linux、macOS、Windows で動きます。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Rust</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-10-17T23:30:15Z">2026年10月18日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-18T12:03:36Z">2026年10月18日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/BonCasRelay" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-EDCB-to-EPGStation" popover aria-label="EDCB-to-EPGStation の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-EDCB-to-EPGStation" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">EDCB-to-EPGStation</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">EDCB で録画が終わったら、その番組を EPGStation の録画一覧にも登録するツール。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Rust</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2023-06-11T13:28:09Z">2023年6月11日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-18T03:05:27Z">2026年10月18日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/EDCB-to-EPGStation" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-youtube-live-archiver" popover aria-label="youtube-live-archiver の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-youtube-live-archiver" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">youtube-live-archiver</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">登録した YouTube チャンネルを見張って、ライブ配信とアーカイブを自動で保存するアプリ。自宅のサーバーで動かします。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Python</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-10-03T15:04:17Z">2026年10月4日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-18T03:04:01Z">2026年10月18日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/youtube-live-archiver" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-Mirakurun" popover aria-label="Mirakurun の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-Mirakurun" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">Mirakurun</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/Chinachu/Mirakurun" rel="noopener">Chinachu/Mirakurun</a></p>
+      <p class="pop-desc">家の中のチューナーをまとめて管理して、録画ソフトや視聴ソフトに放送を配るサーバー。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>JavaScript</dd></div>
+        <div><dt>GitHub のスター</dt><dd>19</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2021-12-10T02:11:07Z">2021年12月10日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-17T14:40:16Z">2026年10月17日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/Mirakurun" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-BonCasClient" popover aria-label="BonCasClient の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-BonCasClient" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">BonCasClient</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/MT6768/BonCasClient" rel="noopener">MT6768/BonCasClient</a></p>
+      <p class="pop-desc">BonCasRelay などのカード共有サーバーにつなぐための部品（DLL）。元のリポジトリの写しです。</p>
+      <dl class="pop-facts">
+        
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-10-12T21:55:09Z">2026年10月13日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-12T22:00:44Z">2026年10月13日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/BonCasClient" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-px4_drv" popover aria-label="px4_drv の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-px4_drv" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">px4_drv</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/tsukumijima/px4_drv" rel="noopener">tsukumijima/px4_drv</a></p>
+      <p class="pop-desc">PLEX PX4/PX5/PX-MLT などのテレビチューナーを、Linux や Windows で動かすための非公式ドライバー。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>8</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-05-01T05:52:07Z">2026年5月1日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-12T21:47:33Z">2026年10月13日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/px4_drv" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-dantto4k" popover aria-label="dantto4k の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-dantto4k" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">dantto4k</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/nekohkr/dantto4k" rel="noopener">nekohkr/dantto4k</a></p>
+      <p class="pop-desc">新 4K8K 衛星放送の形式（MMT/TLV）を、一般的な録画ファイルの形式（MPEG-2 TS）に変換するツール。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2026-08-10T07:08:41Z">2026年8月10日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-10-12T10:53:17Z">2026年10月12日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/dantto4k" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-BonDriver_BDA" popover aria-label="BonDriver_BDA の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-BonDriver_BDA" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">BonDriver_BDA</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/radi-sh/BonDriver_BDA" rel="noopener">radi-sh/BonDriver_BDA</a></p>
+      <p class="pop-desc">BonDriver は、チューナーを TVTest などのソフトから使うための部品です。これは多くの市販チューナーで使える汎用版。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2024-12-07T10:59:12Z">2024年12月7日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2026-08-10T03:36:47Z">2026年8月10日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/BonDriver_BDA" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-BonDriverProxyEx" popover aria-label="BonDriverProxyEx の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-BonDriverProxyEx" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">BonDriverProxyEx</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/HaijinW/BonDriverProxyEx" rel="noopener">HaijinW/BonDriverProxyEx</a></p>
+      <p class="pop-desc">BonDriverProxy に、空いているチューナーを自動で選ぶ機能を加えたもの。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>2</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2023-04-02T02:51:14Z">2023年4月2日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2025-10-27T13:11:58Z">2025年10月27日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/BonDriverProxyEx" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-EDCB_Material_WebUI" popover aria-label="EDCB_Material_WebUI の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-EDCB_Material_WebUI" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">EDCB_Material_WebUI</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/EMWUI/EDCB_Material_WebUI" rel="noopener">EMWUI/EDCB_Material_WebUI</a></p>
+      <p class="pop-desc">EDCB をブラウザーから操作する画面を、見やすいデザインにしたもの。予約、番組表、外出先からの視聴に対応しています。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>JavaScript</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2024-08-04T12:31:42Z">2024年8月4日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2025-05-22T21:50:56Z">2025年5月23日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/EDCB_Material_WebUI" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-watch" id="p-epcltvapp" popover aria-label="epcltvapp の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">視聴</span>
+        <button type="button" class="pop-close" popovertarget="p-epcltvapp" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">epcltvapp</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/daig0rian/epcltvapp" rel="noopener">daig0rian/epcltvapp</a></p>
+      <p class="pop-desc">Android TV や Fire TV から、EPGStation の番組を見るためのアプリ。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Kotlin</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2024-08-24T13:53:15Z">2024年8月24日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2024-09-01T15:32:46Z">2024年9月2日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/epcltvapp" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-watch" id="p-TVTestRPC" popover aria-label="TVTestRPC の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">視聴</span>
+        <button type="button" class="pop-close" popovertarget="p-TVTestRPC" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">TVTestRPC</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/SlashNephy/TvTestRPC" rel="noopener">SlashNephy/TvTestRPC</a></p>
+      <p class="pop-desc">TVTest で見ている番組名を、Discord のプロフィールに表示します。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>3</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2023-12-16T09:56:22Z">2023年12月16日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2024-07-16T12:53:16Z">2024年7月16日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/TVTestRPC" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-BonDriver_mirakc" popover aria-label="BonDriver_mirakc の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-BonDriver_mirakc" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">BonDriver_mirakc</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/tkmsst/BonDriver_mirakc" rel="noopener">tkmsst/BonDriver_mirakc</a></p>
+      <p class="pop-desc">TVTest から mirakc や Mirakurun のチューナーを使うための部品。暗号化された通信（HTTPS）にも対応しています。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>7</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2023-03-09T10:51:43Z">2023年3月9日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2024-07-12T06:23:27Z">2024年7月12日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/BonDriver_mirakc" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-BonDriverProxyEx_webhook_notify" popover aria-label="BonDriverProxyEx_webhook_notify の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-BonDriverProxyEx_webhook_notify" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">BonDriverProxyEx_webhook_notify</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">BonDriverProxyEx を今どの PC が使っているかを調べて、Discord に通知します。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>1</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2024-02-17T08:35:40Z">2024年2月17日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2024-07-04T10:31:47Z">2024年7月4日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/BonDriverProxyEx_webhook_notify" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-tsdump" popover aria-label="tsdump の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-tsdump" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">tsdump</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/hayamdk/tsdump" rel="noopener">hayamdk/tsdump</a></p>
+      <p class="pop-desc">全チャンネルを常に録画しておく、いわゆる「全録」を PC で行うための、シンプルで安定した録画ツール。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2024-05-06T10:22:46Z">2024年5月6日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2024-05-06T10:57:25Z">2024年5月6日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/tsdump" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-tuner" id="p-BonDriverProxy" popover aria-label="BonDriverProxy の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">チューナー</span>
+        <button type="button" class="pop-close" popovertarget="p-BonDriverProxy" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">BonDriverProxy</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/u-n-k-n-o-w-n/BonDriverProxy" rel="noopener">u-n-k-n-o-w-n/BonDriverProxy</a></p>
+      <p class="pop-desc">チューナーを、別の PC からネットワーク越しに使えるようにするツール。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>C++</dd></div>
+        <div><dt>GitHub のスター</dt><dd>2</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2022-11-03T01:16:55Z">2022年11月3日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2023-10-21T11:17:42Z">2023年10月21日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/BonDriverProxy" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-EPGS-to-Discord" popover aria-label="EPGS-to-Discord の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-EPGS-to-Discord" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">EPGS-to-Discord</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/yt4687/EPGS-to-Discord" rel="noopener">yt4687/EPGS-to-Discord</a></p>
+      <p class="pop-desc">EPGStation の録画情報を Discord のチャンネルに投稿します。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>TypeScript</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2022-11-09T10:50:02Z">2022年11月9日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2023-05-13T03:55:29Z">2023年5月13日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/EPGS-to-Discord" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-etc" id="p-Authentication-server-pytest" popover aria-label="Authentication-server-pytest の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">構築・その他</span>
+        <button type="button" class="pop-close" popovertarget="p-Authentication-server-pytest" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">Authentication-server-pytest</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">FastAPI を使って、安全なログインの仕組みを学ぶためのリポジトリ。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>CSS</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2021-10-29T01:03:28Z">2021年10月29日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2023-02-08T03:38:12Z">2023年2月8日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/Authentication-server-pytest" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-FFmpeg-Builds" popover aria-label="FFmpeg-Builds の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-FFmpeg-Builds" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">FFmpeg-Builds</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/BtbN/FFmpeg-Builds" rel="noopener">BtbN/FFmpeg-Builds</a></p>
+      <p class="pop-desc">動画の変換に使う定番ツール FFmpeg を、Windows と Linux 向けにビルドしたもの。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Shell</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2021-10-10T07:19:06Z">2021年10月10日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2022-12-12T06:02:31Z">2022年12月12日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/FFmpeg-Builds" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-etc" id="p-Abot_discord" popover aria-label="Abot_discord の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">構築・その他</span>
+        <button type="button" class="pop-close" popovertarget="p-Abot_discord" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">Abot_discord</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">URL の短縮や地震の通知などができる Discord のボット。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Python</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2021-09-14T02:25:38Z">2021年9月14日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2022-12-08T13:00:21Z">2022年12月8日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/Abot_discord" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-rec" id="p-join_logo_scp_trial" popover aria-label="join_logo_scp_trial の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">録画</span>
+        <button type="button" class="pop-close" popovertarget="p-join_logo_scp_trial" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">join_logo_scp_trial</h3>
+      <p class="pop-parent">元のプロジェクト <a href="https://github.com/tobitti0/join_logo_scp_trial" rel="noopener">tobitti0/join_logo_scp_trial</a></p>
+      <p class="pop-desc">録画した番組から CM を自動でカットする仕組み（join_logo_scp）を試すための環境。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>JavaScript</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2021-11-13T00:33:02Z">2021年11月13日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2022-01-06T04:26:05Z">2022年1月6日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/join_logo_scp_trial" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-etc" id="p-team1" popover aria-label="team1 の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">構築・その他</span>
+        <button type="button" class="pop-close" popovertarget="p-team1" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">team1</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">授業のチーム開発でつくった出席管理システム。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Python</dd></div>
+        <div><dt>GitHub のスター</dt><dd>2</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2021-05-17T11:58:10Z">2021年5月17日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2021-07-27T05:27:10Z">2021年7月27日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/team1" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+    <section class="pop ch-etc" id="p-rename" popover aria-label="rename の番組詳細">
+      <header class="pop-head">
+        <span class="pop-ch">構築・その他</span>
+        <button type="button" class="pop-close" popovertarget="p-rename" popovertargetaction="hide" aria-label="閉じる">×</button>
+      </header>
+      <h3 class="pop-title">rename</h3>
+      <p class="pop-parent">自分で一から作ったもの</p>
+      <p class="pop-desc">ファイル名をまとめて変えるプログラム。</p>
+      <dl class="pop-facts">
+        <div><dt>プログラミング言語</dt><dd>Python</dd></div>
+        <div><dt>GitHub のスター</dt><dd>0</dd></div>
+        <div><dt>作成</dt><dd><time datetime="2020-08-25T09:06:38Z">2020年8月25日</time></dd></div>
+        <div><dt>最終更新</dt><dd><time datetime="2021-06-01T15:08:39Z">2021年6月2日</time></dd></div>
+      </dl>
+      <a class="pop-link" href="https://github.com/stuayu/rename" rel="noopener">GitHub でリポジトリを開く</a>
+    </section>
+  </div>
+</body>
+</html>

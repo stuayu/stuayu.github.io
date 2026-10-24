@@ -1,0 +1,32 @@
+name: 番組表を更新
+
+on:
+  schedule:
+    - cron: "0 18 * * 0" # 毎週月曜 3:00 (JST)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["data/channels.json", "scripts/**"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/build.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 変更があればコミット
+        run: |
+          git add index.html data/repos.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898579+github-actions[bot]@users.noreply.github.com"
+          git commit -m "番組表を更新"
+          git push

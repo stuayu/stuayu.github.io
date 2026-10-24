@@ -1,2 +1,18 @@
+url: https://stuayu.github.io
+lang: ja
 plugins:
- - jekyll-sitemap
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - data/
+  - scripts/
+  - package.json
+defaults:
+  - scope:
+      path: google553c581458835c66.html
+    values:
+      sitemap: false
+  - scope:
+      path: assets
+    values:
+      sitemap: false

@@ -1,0 +1,111 @@
+{
+  "user": "stuayu",
+  "displayName": "あむ",
+  "x": "stuayu_",
+  "onAirDays": 7,
+  "recentYears": 3,
+  "channels": [
+    {
+      "id": "rec",
+      "name": "録画",
+      "note": "予約して録る、録ったあとを整える",
+      "repos": [
+        "EPGStation",
+        "EDCB",
+        "EDCB-to-EPGStation",
+        "tsdump",
+        "EDCB_Material_WebUI",
+        "EPGS-to-Discord",
+        "youtube-live-archiver",
+        "join_logo_scp_trial",
+        "FFmpeg-Builds"
+      ]
+    },
+    {
+      "id": "tuner",
+      "name": "チューナー",
+      "note": "放送を受けて、ほかのソフトに渡す",
+      "repos": [
+        "Mirakurun",
+        "recisdb-proxy-rs",
+        "px4_drv",
+        "dantto4k",
+        "BonCasRelay",
+        "BonCasClient",
+        "BonDriver_BDA",
+        "BonDriverProxy",
+        "BonDriverProxyEx",
+        "BonDriver_mirakc",
+        "BonDriverProxyEx_webhook_notify"
+      ]
+    },
+    {
+      "id": "watch",
+      "name": "視聴",
+      "note": "テレビやスマホで見る",
+      "repos": [
+        "KonomiTV",
+        "Komorebi",
+        "epcltvapp",
+        "TVTestRPC"
+      ]
+    },
+    {
+      "id": "etc",
+      "name": "構築・その他",
+      "note": "まとめて動かす、ほかの道具",
+      "repos": [
+        "docker-recisdb-epgstation-konomitv",
+        "Novelty",
+        "Abot_discord",
+        "Authentication-server-pytest",
+        "team1",
+        "rename"
+      ]
+    }
+  ],
+  "exclude": [
+    "stuayu.github.io",
+    "github-actions-test",
+    "googletest",
+    "githubtest",
+    "music_list",
+    "Python-test",
+    "team6",
+    "Realsense_test",
+    "winget-pkgs",
+    "uYouEnhanced"
+  ],
+  "blurbs": {
+    "EPGStation": "番組表から録画予約や視聴ができる録画ソフト EPGStation の改造版。シリーズ録画の管理を強化するなど、さまざまな改造を入れています。",
+    "EDCB": "Windows 向けの定番録画ソフト EDCB。xtne6f さん版に、少しだけ修正を加えています。",
+    "EDCB-to-EPGStation": "EDCB で録画が終わったら、その番組を EPGStation の録画一覧にも登録するツール。",
+    "tsdump": "全チャンネルを常に録画しておく、いわゆる「全録」を PC で行うための、シンプルで安定した録画ツール。",
+    "EDCB_Material_WebUI": "EDCB をブラウザーから操作する画面を、見やすいデザインにしたもの。予約、番組表、外出先からの視聴に対応しています。",
+    "EPGS-to-Discord": "EPGStation の録画情報を Discord のチャンネルに投稿します。",
+    "youtube-live-archiver": "登録した YouTube チャンネルを見張って、ライブ配信とアーカイブを自動で保存するアプリ。自宅のサーバーで動かします。",
+    "join_logo_scp_trial": "録画した番組から CM を自動でカットする仕組み（join_logo_scp）を試すための環境。",
+    "FFmpeg-Builds": "動画の変換に使う定番ツール FFmpeg を、Windows と Linux 向けにビルドしたもの。",
+    "Mirakurun": "家の中のチューナーをまとめて管理して、録画ソフトや視聴ソフトに放送を配るサーバー。",
+    "recisdb-proxy-rs": "放送の暗号を解くライブラリ libaribb25 を、Rust から使いやすくしたもの。Linux のチューナーからも BonDriver からも放送を読み込めます。",
+    "px4_drv": "PLEX PX4/PX5/PX-MLT などのテレビチューナーを、Linux や Windows で動かすための非公式ドライバー。",
+    "dantto4k": "新 4K8K 衛星放送の形式（MMT/TLV）を、一般的な録画ファイルの形式（MPEG-2 TS）に変換するツール。",
+    "BonCasRelay": "B-CAS / ACAS カードを 1 台の PC に挿しておき、家の中の別の PC からも使えるようにするサーバー。設定はブラウザーからでき、Linux、macOS、Windows で動きます。",
+    "BonCasClient": "BonCasRelay などのカード共有サーバーにつなぐための部品（DLL）。元のリポジトリの写しです。",
+    "BonDriver_BDA": "BonDriver は、チューナーを TVTest などのソフトから使うための部品です。これは多くの市販チューナーで使える汎用版。",
+    "BonDriverProxy": "チューナーを、別の PC からネットワーク越しに使えるようにするツール。",
+    "BonDriverProxyEx": "BonDriverProxy に、空いているチューナーを自動で選ぶ機能を加えたもの。",
+    "BonDriver_mirakc": "TVTest から mirakc や Mirakurun のチューナーを使うための部品。暗号化された通信（HTTPS）にも対応しています。",
+    "BonDriverProxyEx_webhook_notify": "BonDriverProxyEx を今どの PC が使っているかを調べて、Discord に通知します。",
+    "KonomiTV": "テレビ放送や録画番組を、ブラウザーで快適に見られるソフト KonomiTV。",
+    "Komorebi": "Android TV や Fire TV でテレビ番組を見るためのアプリ。",
+    "epcltvapp": "Android TV や Fire TV から、EPGStation の番組を見るためのアプリ。",
+    "TVTestRPC": "TVTest で見ている番組名を、Discord のプロフィールに表示します。",
+    "docker-recisdb-epgstation-konomitv": "録画に必要なソフト一式（recisdb-proxy、EPGStation、KonomiTV、EDCB、Amatsukaze）を、コマンド一つでまとめて立ち上げられるようにしたもの。家の中のスマートフォンや PC から予約と視聴ができます。",
+    "Novelty": "「小説家になろう」の作品を読むための、シンプルで速いリーダーアプリ。",
+    "Abot_discord": "URL の短縮や地震の通知などができる Discord のボット。",
+    "Authentication-server-pytest": "FastAPI を使って、安全なログインの仕組みを学ぶためのリポジトリ。",
+    "team1": "授業のチーム開発でつくった出席管理システム。",
+    "rename": "ファイル名をまとめて変えるプログラム。"
+  }
+}
