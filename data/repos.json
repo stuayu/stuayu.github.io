@@ -37,7 +37,7 @@
     "url": "https://github.com/stuayu/BonCasRelay",
     "description": "Smart card (B-CAS/ACAS) relay server with BonCasLink-compatible protocol, web UI and tray for Linux/macOS/Windows",
     "language": "Rust",
-    "stars": 0,
+    "stars": 1,
     "fork": false,
     "parent": null,
     "created": "2026-10-17T23:30:15Z",
@@ -250,7 +250,7 @@
     "fork": true,
     "parent": "L4Ph/Novelty",
     "created": "2026-06-29T22:45:30Z",
-    "pushed": "2026-10-24T15:48:08Z"
+    "pushed": "2026-10-25T14:34:26Z"
   },
   {
     "name": "px4_drv",
@@ -327,6 +327,6 @@
     "fork": false,
     "parent": null,
     "created": "2026-10-03T15:04:17Z",
-    "pushed": "2026-10-18T03:04:01Z"
+    "pushed": "2026-10-25T16:09:08Z"
   }
 ]
