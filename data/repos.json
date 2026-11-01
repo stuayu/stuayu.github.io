@@ -26,7 +26,7 @@
     "url": "https://github.com/stuayu/BonCasClient",
     "description": "BonCasLink のクライアントインターフェースを実装した DLL (Mirror)",
     "language": "",
-    "stars": 0,
+    "stars": 3,
     "fork": true,
     "parent": "MT6768/BonCasClient",
     "created": "2026-10-12T21:55:09Z",
@@ -37,7 +37,7 @@
     "url": "https://github.com/stuayu/BonCasRelay",
     "description": "Smart card (B-CAS/ACAS) relay server with BonCasLink-compatible protocol, web UI and tray for Linux/macOS/Windows",
     "language": "Rust",
-    "stars": 1,
+    "stars": 6,
     "fork": false,
     "parent": null,
     "created": "2026-10-17T23:30:15Z",
@@ -118,7 +118,7 @@
     "fork": false,
     "parent": null,
     "created": "2026-10-18T15:27:48Z",
-    "pushed": "2026-10-19T13:13:37Z"
+    "pushed": "2026-10-29T21:42:06Z"
   },
   {
     "name": "EDCB",
@@ -180,7 +180,7 @@
     "url": "https://github.com/stuayu/EPGStation",
     "description": "シリーズ管理機能を強化したEPGStationのFork版です。様々な改造をしています。",
     "language": "TypeScript",
-    "stars": 14,
+    "stars": 19,
     "fork": true,
     "parent": "l3tnun/EPGStation",
     "created": "2021-12-10T02:15:21Z",
@@ -228,14 +228,14 @@
     "fork": true,
     "parent": "tsukumijima/KonomiTV",
     "created": "2023-12-18T10:17:03Z",
-    "pushed": "2026-10-19T13:38:59Z"
+    "pushed": "2026-10-28T22:53:47Z"
   },
   {
     "name": "Mirakurun",
     "url": "https://github.com/stuayu/Mirakurun",
     "description": "A Modern DTV Tuner Server Service for ISDB.",
     "language": "JavaScript",
-    "stars": 19,
+    "stars": 20,
     "fork": true,
     "parent": "Chinachu/Mirakurun",
     "created": "2021-12-10T02:11:07Z",
@@ -250,7 +250,7 @@
     "fork": true,
     "parent": "L4Ph/Novelty",
     "created": "2026-06-29T22:45:30Z",
-    "pushed": "2026-10-25T14:34:26Z"
+    "pushed": "2026-10-26T07:45:34Z"
   },
   {
     "name": "px4_drv",
@@ -327,6 +327,6 @@
     "fork": false,
     "parent": null,
     "created": "2026-10-03T15:04:17Z",
-    "pushed": "2026-10-25T16:09:08Z"
+    "pushed": "2026-11-01T15:55:47Z"
   }
 ]
