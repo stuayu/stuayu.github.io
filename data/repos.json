@@ -30,7 +30,7 @@
     "fork": true,
     "parent": "MT6768/BonCasClient",
     "created": "2026-10-12T21:55:09Z",
-    "pushed": "2026-10-12T22:00:44Z"
+    "pushed": "2026-11-15T02:33:39Z"
   },
   {
     "name": "BonCasRelay",
@@ -180,7 +180,7 @@
     "url": "https://github.com/stuayu/EPGStation",
     "description": "シリーズ管理機能を強化したEPGStationのFork版です。様々な改造をしています。",
     "language": "TypeScript",
-    "stars": 19,
+    "stars": 18,
     "fork": true,
     "parent": "l3tnun/EPGStation",
     "created": "2021-12-10T02:15:21Z",
@@ -250,18 +250,18 @@
     "fork": true,
     "parent": "L4Ph/Novelty",
     "created": "2026-06-29T22:45:30Z",
-    "pushed": "2026-10-26T07:45:34Z"
+    "pushed": "2026-11-15T02:55:18Z"
   },
   {
     "name": "px4_drv",
     "url": "https://github.com/stuayu/px4_drv",
     "description": "Unofficial Linux / Windows (WinUSB) driver for PLEX PX4/PX5/PX-MLT and e-better series ISDB-T/S receivers (not V4L-DVB)",
-    "language": "C++",
-    "stars": 8,
+    "language": "C",
+    "stars": 7,
     "fork": true,
     "parent": "tsukumijima/px4_drv",
     "created": "2026-05-01T05:52:07Z",
-    "pushed": "2026-11-02T13:41:54Z"
+    "pushed": "2026-11-15T14:39:32Z"
   },
   {
     "name": "recisdb-proxy-rs",
@@ -272,7 +272,7 @@
     "fork": true,
     "parent": "kazuki0824/recisdb-rs",
     "created": "2026-02-01T04:07:39Z",
-    "pushed": "2026-10-24T07:37:17Z"
+    "pushed": "2026-11-15T02:33:37Z"
   },
   {
     "name": "rename",
@@ -338,6 +338,6 @@
     "fork": false,
     "parent": null,
     "created": "2026-10-03T15:04:17Z",
-    "pushed": "2026-11-05T08:28:54Z"
+    "pushed": "2026-11-15T12:57:14Z"
   }
 ]
